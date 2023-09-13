@@ -1,5 +1,5 @@
 import java.util.*; // untuk scanner dan exception
-}
+
 public class Berhitung {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
