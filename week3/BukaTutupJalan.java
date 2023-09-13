@@ -1,30 +1,19 @@
 import java.util.Scanner;
 
-public class BukaTutupJalan {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String[] platNumbers = scanner.nextLine().split(" ");
 
-        try {
-            System.out.print("Masukkan plat nomor 4 mobil (pakai spasi): ");
-            String input = scanner.nextLine();
+        int total = 0;
+        for (String plat : platNumbers) {
+            total += Integer.parseInt(plat);
+        }
 
-            String[] platNomorMobil = input.split(" ");
-
-            boolean bolehJalan = true;
-            for (String platNomor : platNomorMobil) {
-                int gabunganAngka = Integer.parseInt(platNomor);
-                if ((gabunganAngka - 999999) % 5 != 0) {
-                    bolehJalan = false;
-                    break; // jika satu mobil diberhentikan, maka semua diberhentikan
-                }
-            }
-
-            String hasil = bolehJalan ? "Jalan" : "Berhenti";
-            System.out.println(hasil);
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        } finally {
-            scanner.close();
+        if ((total - 999999) % 5 == 0) {
+            System.out.println("berhenti");
+        } else {
+            System.out.println("jalan");
         }
     }
 }
