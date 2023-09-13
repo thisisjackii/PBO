@@ -5,11 +5,18 @@ public class Berhitung {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            String input = scanner.nextLine(); // satu kali input alih-alih pakai 3 scanner, bagus untuk efisiensi sekaligus mempermudah exception handling
-            String[] parts = input.split(" "); // pisah input berdasarkan letak spasi
+            String input = scanner.nextLine();
+            // satu kali input alih-alih pakai 3 scanner, bagus untuk efisiensi
+            // sekaligus mempermudah exception handling
+            String[] parts = input.split(" ");
+            // pisah input berdasarkan letak spasi
 
             if (parts.length != 3) { // jika tidak terdapat 3 karakter non-spasi
-                throw new InputMismatchException("Invalid input format. You need to enter firstnumber<space>operator<space>secondmumber.");
+                throw new
+                    InputMismatchException(
+                        "Invalid input format. You need to enter\
+                        firstnumber<space>operator<space>secondmumber."
+                    );
             }
 
             int A = Integer.parseInt(parts[0]);
@@ -17,7 +24,8 @@ public class Berhitung {
             int B = Integer.parseInt(parts[2]);
 
             if (withinRangeLimit(A, B, 1, 1000)) {
-                throw new InputMismatchException("A and B must be between 1 and 1000. No more, no less.");
+                throw new InputMismatchException("A and B must be between 1\
+                                                 and 1000. No more, no less.");
             }
 
             int res = 0;
@@ -28,7 +36,8 @@ public class Berhitung {
                 res = A - B;
             } else if (operator.equals("*")) {
                 res = A * B;
-            } else if (operator.equals("/")) { // sudsh tidak perlu lagi exception pembagian 0 karena sudah di-handle
+            } else if (operator.equals("/")) { // sudsh tidak perlu lagi exception
+                                                // pembagian 0 karena sudah di-handle
                 res = A / B;
             } else if (operator.equals("%")) {
                 res = A % B;
@@ -41,7 +50,8 @@ public class Berhitung {
         } catch (InputMismatchException e) {
             System.out.println("Error: " + e.getMessage());
         } catch (NumberFormatException e) {
-            System.out.println("Error: Invalid numeric input. Please enter valid integers."); // jika bukan integer input
+            System.out.println("Error: Invalid numeric input. Please enter valid integers.");
+            // jika bukan integer input
         } catch (NoSuchElementException e) {
             System.out.println("Error: Insufficient input provided.");
         }
