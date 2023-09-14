@@ -17,7 +17,8 @@ public class MDArrayJava {
         int[][] twoDimensionalArray3 = {seventhArray, eighthArray, ninthArray};
 
         // Three Dimensional Array
-        int[][][] threeDimensionalArray = {twoDimensionalArray1, twoDimensionalArray2, twoDimensionalArray3};
+        int[][][] threeDimensionalArray =
+        {twoDimensionalArray1, twoDimensionalArray2, twoDimensionalArray3};
 
         // Print the three-dimensional array
         for (int[][] twoDArray : threeDimensionalArray) {
