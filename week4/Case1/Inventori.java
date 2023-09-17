@@ -1,8 +1,3 @@
-//public class Inventori {
-//    public static void main(String[] args) {
-//        System.out.println("Hello world!");
-//    }
-//}
 public class Inventori {
     Barang[] barangs;
     void initBarang() {
